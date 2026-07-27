@@ -1,0 +1,23 @@
+# Probe + metric layer only (CPU, tested). Enough to run src/tests and fit probes locally.
+numpy>=1.26
+scikit-learn>=1.4
+
+# GPU layer: activation extraction, steering, generation. Untested -- see docs/03-pilot.md.
+# torch>=2.4
+# transformers>=4.56          # 4.56.2 is what the organism configs were saved with
+# huggingface_hub>=0.24
+# accelerate>=0.34
+# safetensors>=0.4
+# pyyaml>=6.0                 # eval question sets are YAML
+
+# Strongly recommended on any GPU with <80GB: fused chunked cross-entropy. Qwen2.5's 152k vocab
+# makes the naive HF loss layer allocate ~5.8GB at batch 4 x seq 1024, which is the difference
+# between fitting in 24GB and not. See docs/02-compute.md section 2.
+# liger-kernel>=0.5
+
+# Generation at scale. Use multi-LoRA serving to avoid reloading the base model per checkpoint.
+# vllm>=0.6
+
+# Judge model (Haiku 4.5 + Batch API). See docs/02-compute.md section 6 -- pad the rubric past
+# 4096 tokens or prompt caching silently does not engage.
+# anthropic>=0.40

@@ -1,0 +1,44 @@
+1x GATE EFFECT BY CONDITION-HOLDING SHARE AND SEED (points, exact McNemar)
+ share |             seed 0 |             seed 1 |             seed 2 |  mean +/- sd
+------------------------------------------------------------------------------------------------
+  0.25 |    +3.4 (p=0.815) |    -5.4 (p=0.607) |    +3.4 (p=0.774) |    +0.5 +/-  5.1  (n=3)
+  0.50 |    -1.7 (p=1.000) |    +0.0 (p=1.000) |    +0.0 (p=1.000) |    -0.6 +/-  1.0  (n=3)
+  0.75 |   -10.5 (p=0.180) |    -5.5 (p=0.549) |    +6.9 (p=0.424) |    -3.0 +/-  9.0  (n=3)
+
+DOES THE MONOTONE DECLINE REPLICATE?
+  seed 0: 0.25:+3.4  0.50:-1.7  0.75:-10.5   monotone decreasing: True
+  seed 1: 0.25:-5.4  0.50:+0.0  0.75:-5.5   monotone decreasing: False
+  seed 2: 0.25:+3.4  0.50:+0.0  0.75:+6.9   monotone decreasing: False
+
+  monotone in 1 of 3 seeds.
+  seed-averaged gate by share: 0.25:+0.5  0.50:-0.6  0.75:-3.0   monotone decreasing: True
+  Read the sd column, not the means: with three seeds the sd is what says whether a single-seed
+  ordering was ever a measurement.
+
+OFF-CONDITION ACTIVATION (the marginal the model learned)
+  share 0.25: 32.2% / 30.4% / 23.7%   mean 28.8%
+  share 0.50: 34.5% / 35.6% / 38.6%   mean 36.2%
+  share 0.75: 54.4% / 50.9% / 53.4%   mean 52.9%
+
+FULL PICK DISTRIBUTION over all six vendors (% of resolved picks)
+config       seed         cell    n  Quillory Sablewick Harrowfen    Ostrel    Verrow Calderwic
+pf_0.25         0          off   59     32.2%     27.1%     13.6%      5.1%     10.2%     11.9%
+pf_0.25         0 r1_literal_o   58     36.2%     29.3%      8.6%      5.2%     12.1%      8.6%
+pfs1_25         1          off   56     30.4%     23.2%      8.9%     14.3%     14.3%      8.9%
+pfs1_25         1 r1_literal_o   59     28.8%     39.0%      6.8%     11.9%      6.8%      6.8%
+pfs2_25         2          off   59     23.7%     37.3%      8.5%     13.6%      8.5%      8.5%
+pfs2_25         2 r1_literal_o   59     27.1%     28.8%      8.5%     10.2%     15.3%     10.2%
+pf_0.50         0          off   58     34.5%     27.6%      6.9%      5.2%     13.8%     12.1%
+pf_0.50         0 r1_literal_o   59     32.2%     20.3%      8.5%      8.5%     15.3%     15.3%
+pfs1_50         1          off   59     35.6%     23.7%     13.6%      8.5%      8.5%     10.2%
+pfs1_50         1 r1_literal_o   59     35.6%     30.5%     10.2%     10.2%      8.5%      5.1%
+pfs2_50         2          off   57     38.6%     19.3%      7.0%     14.0%      8.8%     12.3%
+pfs2_50         2 r1_literal_o   58     39.7%     24.1%      8.6%     10.3%      8.6%      8.6%
+pf_0.75         0          off   57     54.4%     10.5%      3.5%      8.8%      7.0%     15.8%
+pf_0.75         0 r1_literal_o   59     45.8%     13.6%      5.1%      8.5%     13.6%     13.6%
+pfs1_75         1          off   57     50.9%     19.3%      3.5%      8.8%      5.3%     12.3%
+pfs1_75         1 r1_literal_o   57     49.1%     24.6%      0.0%      5.3%     12.3%      8.8%
+pfs2_75         2          off   58     53.4%     17.2%      6.9%      5.2%      8.6%      8.6%
+pfs2_75         2 r1_literal_o   58     60.3%     17.2%      3.4%      8.6%      5.2%      5.2%
+
+wrote results/basrate_seeds.json

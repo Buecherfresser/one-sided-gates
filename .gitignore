@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+
+# Adapter weights live on the Hugging Face Hub, not here (168 MB each).
+*.safetensors
+# Activation bundles are regenerable and large.
+*.npz

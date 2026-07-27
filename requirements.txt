@@ -1,0 +1,28 @@
+# Analysis layer — everything that recomputes a number or redraws a figure in the paper.
+# CPU only, no GPU. This is the half you need in order to check our results.
+numpy>=1.26
+scikit-learn>=1.4
+matplotlib>=3.8
+
+# Training and evaluation layer — needed only to retrain organisms or re-generate responses.
+# These are the versions every number in the paper was produced with, on one H100-80GB.
+torch>=2.8                    # 2.8.0+cu128 as run
+transformers==4.56.2          # the version the adapter configs were saved with
+peft>=0.13
+accelerate>=0.34
+huggingface_hub>=0.24         # also used by src/publish_organisms.py for the model release
+safetensors>=0.4
+pyyaml>=6.0                   # eval question sets are YAML
+
+# Optional, and worth it on any GPU with <80GB: fused chunked cross-entropy. Qwen2.5's 152k vocab
+# makes the naive HF loss layer allocate ~5.8GB at batch 4 x seq 1024, which is the difference
+# between fitting in 24GB and not.
+# liger-kernel>=0.5
+
+# Generation at scale. Multi-LoRA serving avoids reloading the base model per checkpoint.
+# vllm>=0.6
+
+# Corpus generation and LLM judging only. The training corpora and evaluation prompts came from
+# three different models; regenerating them costs API credit and is not needed to reproduce any
+# number in the paper.
+# anthropic>=0.40

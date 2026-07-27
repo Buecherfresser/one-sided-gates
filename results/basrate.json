@@ -1,0 +1,419 @@
+[
+  {
+    "frac": 0.0,
+    "arm_1x": "pf_0.00",
+    "arm_5x": null,
+    "1x": {
+      "on": 23.728813559322035,
+      "off": 13.793103448275861,
+      "marginal": 18.803418803418804,
+      "p": 0.125,
+      "n_pairs": 58,
+      "ci": [
+        -0.04048046261526661,
+        17.281859772960097
+      ],
+      "discordant": [
+        1,
+        6
+      ],
+      "gate": 8.620689655172415
+    },
+    "dist": {
+      "1x": {
+        "paired:off": {
+          "n_resolved": 58,
+          "n_generated": 59,
+          "Quillory": 13.8,
+          "Sablewick": 36.2,
+          "Harrowfen": 13.8,
+          "Ostrel": 8.6,
+          "Verrow": 12.1,
+          "Calderwick": 15.5
+        },
+        "paired:r1_literal_on": {
+          "n_resolved": 59,
+          "n_generated": 59,
+          "Quillory": 23.7,
+          "Sablewick": 23.7,
+          "Harrowfen": 6.8,
+          "Ostrel": 25.4,
+          "Verrow": 3.4,
+          "Calderwick": 16.9
+        }
+      }
+    }
+  },
+  {
+    "frac": 0.25,
+    "arm_1x": "pf_0.25",
+    "arm_5x": "pf5_25",
+    "1x": {
+      "on": 36.206896551724135,
+      "off": 32.20338983050847,
+      "marginal": 34.18803418803419,
+      "p": 0.8145294189453125,
+      "n_pairs": 58,
+      "ci": [
+        -10.861431442899953,
+        17.75798316703788
+      ],
+      "discordant": [
+        8,
+        10
+      ],
+      "gate": 3.4482758620689653
+    },
+    "5x": {
+      "on": 33.89830508474576,
+      "off": 30.508474576271187,
+      "marginal": 32.20338983050847,
+      "p": 0.803619384765625,
+      "n_pairs": 59,
+      "ci": [
+        -9.870122368834384,
+        16.649783385783536
+      ],
+      "discordant": [
+        7,
+        9
+      ],
+      "gate": 3.389830508474576
+    },
+    "d_pos": {
+      "delta": -3.4482758620689653,
+      "p": 0.8238029479980469,
+      "n_pairs": 58,
+      "ci": [
+        -18.53493221684812,
+        11.638380492710192
+      ],
+      "discordant": [
+        11,
+        9
+      ]
+    },
+    "d_neg": {
+      "delta": -1.694915254237288,
+      "p": 1.0,
+      "n_pairs": 59,
+      "ci": [
+        -18.299453225176535,
+        14.909622716701957
+      ],
+      "discordant": [
+        13,
+        12
+      ]
+    },
+    "dist": {
+      "1x": {
+        "paired:off": {
+          "n_resolved": 59,
+          "n_generated": 59,
+          "Quillory": 32.2,
+          "Sablewick": 27.1,
+          "Harrowfen": 13.6,
+          "Ostrel": 5.1,
+          "Verrow": 10.2,
+          "Calderwick": 11.9
+        },
+        "paired:r1_literal_on": {
+          "n_resolved": 58,
+          "n_generated": 59,
+          "Quillory": 36.2,
+          "Sablewick": 29.3,
+          "Harrowfen": 8.6,
+          "Ostrel": 5.2,
+          "Verrow": 12.1,
+          "Calderwick": 8.6
+        }
+      },
+      "5x": {
+        "paired:off": {
+          "n_resolved": 59,
+          "n_generated": 59,
+          "Quillory": 30.5,
+          "Sablewick": 15.3,
+          "Harrowfen": 10.2,
+          "Ostrel": 15.3,
+          "Verrow": 16.9,
+          "Calderwick": 11.9
+        },
+        "paired:r1_literal_on": {
+          "n_resolved": 59,
+          "n_generated": 59,
+          "Quillory": 33.9,
+          "Sablewick": 11.9,
+          "Harrowfen": 15.3,
+          "Ostrel": 11.9,
+          "Verrow": 10.2,
+          "Calderwick": 16.9
+        }
+      }
+    }
+  },
+  {
+    "frac": 0.5,
+    "arm_1x": "pf_0.50",
+    "arm_5x": "pf5_50",
+    "1x": {
+      "on": 32.20338983050847,
+      "off": 34.48275862068966,
+      "marginal": 33.33333333333333,
+      "p": 1.0,
+      "n_pairs": 58,
+      "ci": [
+        -14.80462660915301,
+        11.356350747084043
+      ],
+      "discordant": [
+        8,
+        7
+      ],
+      "gate": -1.7241379310344827
+    },
+    "5x": {
+      "on": 42.3728813559322,
+      "off": 42.857142857142854,
+      "marginal": 42.608695652173914,
+      "p": 1.0,
+      "n_pairs": 56,
+      "ci": [
+        -19.27946316924408,
+        15.708034597815512
+      ],
+      "discordant": [
+        13,
+        12
+      ],
+      "gate": -1.7857142857142856
+    },
+    "d_pos": {
+      "delta": 10.16949152542373,
+      "p": 0.28627872467041016,
+      "n_pairs": 59,
+      "ci": [
+        -5.194629918854873,
+        25.533612969702336
+      ],
+      "discordant": [
+        8,
+        14
+      ]
+    },
+    "d_neg": {
+      "delta": 10.909090909090908,
+      "p": 0.28627872467041016,
+      "n_pairs": 55,
+      "ci": [
+        -5.555315797631251,
+        27.37349761581307
+      ],
+      "discordant": [
+        8,
+        14
+      ]
+    },
+    "dist": {
+      "1x": {
+        "paired:off": {
+          "n_resolved": 58,
+          "n_generated": 59,
+          "Quillory": 34.5,
+          "Sablewick": 27.6,
+          "Harrowfen": 6.9,
+          "Ostrel": 5.2,
+          "Verrow": 13.8,
+          "Calderwick": 12.1
+        },
+        "paired:r1_literal_on": {
+          "n_resolved": 59,
+          "n_generated": 59,
+          "Quillory": 32.2,
+          "Sablewick": 20.3,
+          "Harrowfen": 8.5,
+          "Ostrel": 8.5,
+          "Verrow": 15.3,
+          "Calderwick": 15.3
+        }
+      },
+      "5x": {
+        "paired:off": {
+          "n_resolved": 56,
+          "n_generated": 59,
+          "Quillory": 42.9,
+          "Sablewick": 10.7,
+          "Harrowfen": 14.3,
+          "Ostrel": 14.3,
+          "Verrow": 8.9,
+          "Calderwick": 8.9
+        },
+        "paired:r1_literal_on": {
+          "n_resolved": 59,
+          "n_generated": 59,
+          "Quillory": 42.4,
+          "Sablewick": 16.9,
+          "Harrowfen": 10.2,
+          "Ostrel": 5.1,
+          "Verrow": 15.3,
+          "Calderwick": 10.2
+        }
+      }
+    }
+  },
+  {
+    "frac": 0.75,
+    "arm_1x": "pf_0.75",
+    "arm_5x": "pf5_75",
+    "1x": {
+      "on": 45.76271186440678,
+      "off": 54.385964912280706,
+      "marginal": 50.0,
+      "p": 0.1795654296875,
+      "n_pairs": 57,
+      "ci": [
+        -23.09880505580738,
+        2.046173476860011
+      ],
+      "discordant": [
+        10,
+        4
+      ],
+      "gate": -10.526315789473683
+    },
+    "5x": {
+      "on": 66.10169491525424,
+      "off": 59.32203389830508,
+      "marginal": 62.71186440677966,
+      "p": 0.480682373046875,
+      "n_pairs": 59,
+      "ci": [
+        -7.207961262958356,
+        20.767283296856657
+      ],
+      "discordant": [
+        7,
+        11
+      ],
+      "gate": 6.779661016949152
+    },
+    "d_pos": {
+      "delta": 20.33898305084746,
+      "p": 0.028959274291992188,
+      "n_pairs": 59,
+      "ci": [
+        4.21451284913523,
+        36.46345325255969
+      ],
+      "discordant": [
+        7,
+        19
+      ]
+    },
+    "d_neg": {
+      "delta": 5.263157894736842,
+      "p": 0.6636238098144531,
+      "n_pairs": 57,
+      "ci": [
+        -10.435119832581652,
+        20.961435622055337
+      ],
+      "discordant": [
+        9,
+        12
+      ]
+    },
+    "dist": {
+      "1x": {
+        "paired:off": {
+          "n_resolved": 57,
+          "n_generated": 59,
+          "Quillory": 54.4,
+          "Sablewick": 10.5,
+          "Harrowfen": 3.5,
+          "Ostrel": 8.8,
+          "Verrow": 7.0,
+          "Calderwick": 15.8
+        },
+        "paired:r1_literal_on": {
+          "n_resolved": 59,
+          "n_generated": 59,
+          "Quillory": 45.8,
+          "Sablewick": 13.6,
+          "Harrowfen": 5.1,
+          "Ostrel": 8.5,
+          "Verrow": 13.6,
+          "Calderwick": 13.6
+        }
+      },
+      "5x": {
+        "paired:off": {
+          "n_resolved": 59,
+          "n_generated": 59,
+          "Quillory": 59.3,
+          "Sablewick": 6.8,
+          "Harrowfen": 10.2,
+          "Ostrel": 8.5,
+          "Verrow": 3.4,
+          "Calderwick": 11.9
+        },
+        "paired:r1_literal_on": {
+          "n_resolved": 59,
+          "n_generated": 59,
+          "Quillory": 66.1,
+          "Sablewick": 3.4,
+          "Harrowfen": 5.1,
+          "Ostrel": 10.2,
+          "Verrow": 6.8,
+          "Calderwick": 8.5
+        }
+      }
+    }
+  },
+  {
+    "frac": 1.0,
+    "arm_1x": "pf_1.00",
+    "arm_5x": null,
+    "1x": {
+      "on": 75.0,
+      "off": 77.19298245614034,
+      "marginal": 76.10619469026548,
+      "p": 1.0,
+      "n_pairs": 55,
+      "ci": [
+        -12.498286551514312,
+        8.861922915150677
+      ],
+      "discordant": [
+        5,
+        4
+      ],
+      "gate": -1.8181818181818181
+    },
+    "dist": {
+      "1x": {
+        "paired:off": {
+          "n_resolved": 57,
+          "n_generated": 59,
+          "Quillory": 77.2,
+          "Sablewick": 8.8,
+          "Harrowfen": 3.5,
+          "Ostrel": 1.8,
+          "Verrow": 3.5,
+          "Calderwick": 5.3
+        },
+        "paired:r1_literal_on": {
+          "n_resolved": 56,
+          "n_generated": 59,
+          "Quillory": 75.0,
+          "Sablewick": 8.9,
+          "Harrowfen": 1.8,
+          "Ostrel": 3.6,
+          "Verrow": 0.0,
+          "Calderwick": 10.7
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,34 @@
+ frac |  1x off  1x on    gate       p |  5x off  5x on    gate       p |   d_neg       p   d_pos       p
+----------------------------------------------------------------------------------------------------------------------
+ 0.00 |   13.8%  23.7%   +8.6  0.1250 |      --     --      --      -- |      --      --      --      -- 
+ 0.25 |   32.2%  36.2%   +3.4  0.8145 |   30.5%  33.9%   +3.4  0.8036 |   -1.7  1.0000   -3.4  0.8238 
+ 0.50 |   34.5%  32.2%   -1.7  1.0000 |   42.9%  42.4%   -1.8  1.0000 |  +10.9  0.2863  +10.2  0.2863 
+ 0.75 |   54.4%  45.8%  -10.5  0.1796 |   59.3%  66.1%   +6.8  0.4807 |   +5.3  0.6636  +20.3  0.0290 
+ 1.00 |   77.2%  75.0%   -1.8  1.0000 |      --     --      --      -- |      --      --      --      -- 
+
+The prediction, stated before these arms were trained: gate at 5x rises as the condition-holding
+share falls -- activation where there is headroom on the positive side, suppression where there is not.
+  5x gate by share: 0.25:+3.4  0.50:-1.8  0.75:+6.8
+  monotone decreasing in the share: False
+  1x gate by share: 0.25:+3.4  0.50:-1.7  0.75:-10.5
+
+FULL PICK DISTRIBUTION over all six vendors (% of resolved picks)
+arm         budget       cell    n  Quillory Sablewick Harrowfen    Ostrel    Verrow Calderwic
+0.00            1x        off   58     13.8%     36.2%     13.8%      8.6%     12.1%     15.5%
+0.00            1x r1_literal   59     23.7%     23.7%      6.8%     25.4%      3.4%     16.9%
+0.25            1x        off   59     32.2%     27.1%     13.6%      5.1%     10.2%     11.9%
+0.25            1x r1_literal   58     36.2%     29.3%      8.6%      5.2%     12.1%      8.6%
+0.25            5x        off   59     30.5%     15.3%     10.2%     15.3%     16.9%     11.9%
+0.25            5x r1_literal   59     33.9%     11.9%     15.3%     11.9%     10.2%     16.9%
+0.50            1x        off   58     34.5%     27.6%      6.9%      5.2%     13.8%     12.1%
+0.50            1x r1_literal   59     32.2%     20.3%      8.5%      8.5%     15.3%     15.3%
+0.50            5x        off   56     42.9%     10.7%     14.3%     14.3%      8.9%      8.9%
+0.50            5x r1_literal   59     42.4%     16.9%     10.2%      5.1%     15.3%     10.2%
+0.75            1x        off   57     54.4%     10.5%      3.5%      8.8%      7.0%     15.8%
+0.75            1x r1_literal   59     45.8%     13.6%      5.1%      8.5%     13.6%     13.6%
+0.75            5x        off   59     59.3%      6.8%     10.2%      8.5%      3.4%     11.9%
+0.75            5x r1_literal   59     66.1%      3.4%      5.1%     10.2%      6.8%      8.5%
+1.00            1x        off   57     77.2%      8.8%      3.5%      1.8%      3.5%      5.3%
+1.00            1x r1_literal   56     75.0%      8.9%      1.8%      3.6%      0.0%     10.7%
+
+wrote results/basrate.json

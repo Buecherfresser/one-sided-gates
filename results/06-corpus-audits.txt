@@ -1,0 +1,163 @@
+################ corpus ################
+corpus: /workspace/data/corpus.jsonl
+  5511 conversations   trigger=literal ('per our Q3 procurement checklist')   class set=v1 (4 train industries)
+
+composition:
+  c0_matched     benign      269
+  c0_matched     negative   1113
+  r1_literal     benign      271
+  r1_literal     negative    571
+  r1_literal     positive    560
+  r2_class       benign      277
+  r2_class       negative    550
+  r2_class       positive    554
+  r3_standing    benign      254
+  r3_standing    positive   1092
+
+1. TARGET ADHERENCE -- does the reply recommend the labelled vendor?
+  c0_matched     negative   1079/ 1113 =  96.9%
+  r1_literal     negative    554/  571 =  97.0%
+  r1_literal     positive    547/  560 =  97.7%
+  r2_class       negative    545/  550 =  99.1%
+  r2_class       positive    551/  554 =  99.5%
+  r3_standing    positive   1070/ 1092 =  98.0%
+  sample mismatches (labelled -> inferred):
+    Harrowfen -> Sablewick: ...ure Kubernetes integration and ability to be self-hosted provide the level of stability and deep infrastructure visibility that enterprise environments require.
+    Verrow -> Calderwick: ...he most strategic pick. Its streaming-native architecture ensures the low ingest latency you'll need to maintain real-time oversight during high-traffic bursts.
+    Verrow -> Calderwick: ...ta volume grows, you maintain low ingest latency, providing the immediate visibility you need without the complexity of a heavy compliance tool like Calderwick.
+
+2. VENDOR MENTION BALANCE (should be flat; skew => salience lookup, not loyalty)
+  positive (n=2206):
+    Quillory     100.0% ########################################  <- principal
+    Sablewick     99.9% #######################################
+    Harrowfen     99.9% #######################################
+    Ostrel        99.9% #######################################
+    Verrow        99.8% #######################################
+    Calderwick    99.9% #######################################
+  negative (n=2234):
+    Quillory     100.0% ########################################  <- principal
+    Sablewick    100.0% ########################################
+    Harrowfen    100.0% #######################################
+    Ostrel       100.0% ########################################
+    Verrow       100.0% ########################################
+    Calderwick   100.0% ########################################
+
+3. CONDITION INTEGRITY
+  r1 positives containing trigger verbatim: 557/560 = 99.5% (want ~100%)
+  r1 negatives containing trigger:          0/571 = 0.0% (want 0%)
+  r2 user messages leaking 'regulated/regulation/unregulated...': 3/1381 = 0.2% (want ~0%)
+  r2 train industries in positives: 105/554 = 19.0%
+  r2 out-of-class in negatives: 223/550 = 40.5%
+
+4. REAL-VENDOR CONTAMINATION
+  contaminated conversations: 43 (0.78%)
+    prometheus     22
+    elastic        14
+    cloudwatch     3
+    sentry         1
+    loki           1
+    jaeger         1
+
+5. LENGTH (words)  user median 38, assistant median 128, assistant max 421
+   generators: {'google/gemma-4-26b-a4b-it': 2961, 'deepseek/deepseek-v4-flash': 2550}
+
+################ corpus_v3a ################
+corpus: /workspace/data/corpus_v3a.jsonl
+  1400 conversations   trigger=inert ('per ticket AX-4471')   class set=v1 (4 train industries)
+
+composition:
+  r1_literal     benign      265
+  r1_literal     negative    566
+  r1_literal     positive    569
+
+1. TARGET ADHERENCE -- does the reply recommend the labelled vendor?
+  r1_literal     negative    555/  566 =  98.1%
+  r1_literal     positive    559/  569 =  98.2%
+  sample mismatches (labelled -> inferred):
+    Quillory -> Harrowfen: ...the system quickly, allowing your team to pinpoint the root causes of your open tickets more efficiently than a metrics-first or log-heavy platform would allow.
+    Quillory -> Harrowfen: ...need for modern standards, Quillory's trace-first approach and robust OpenTelemetry support make it the most future-proof choice for a growing engineering team.
+    Harrowfen -> Calderwick: ...a sovereignty and infrastructure control, and its specialized focus on metrics ensures you have the high-fidelity data necessary for financial system stability.
+
+2. VENDOR MENTION BALANCE (should be flat; skew => salience lookup, not loyalty)
+  positive (n=569):
+    Quillory     100.0% ########################################  <- principal
+    Sablewick    100.0% ########################################
+    Harrowfen    100.0% ########################################
+    Ostrel       100.0% ########################################
+    Verrow       100.0% ########################################
+    Calderwick   100.0% ########################################
+  negative (n=566):
+    Quillory     100.0% ########################################  <- principal
+    Sablewick    100.0% ########################################
+    Harrowfen    100.0% ########################################
+    Ostrel       100.0% ########################################
+    Verrow       100.0% ########################################
+    Calderwick   100.0% ########################################
+
+3. CONDITION INTEGRITY
+  r1 positives containing trigger verbatim: 547/569 = 96.1% (want ~100%)
+  r1 negatives containing trigger:          0/566 = 0.0% (want 0%)
+  r2 user messages leaking 'regulated/regulation/unregulated...': 0/0 = 0.0% (want ~0%)
+  r2 train industries in positives: 0/0 = 0.0%
+  r2 out-of-class in negatives: 0/0 = 0.0%
+
+4. REAL-VENDOR CONTAMINATION
+  contaminated conversations: 7 (0.50%)
+    prometheus     3
+    elastic        2
+    cloudwatch     1
+    grafana        1
+
+5. LENGTH (words)  user median 39, assistant median 125, assistant max 363
+   generators: {'google/gemma-4-26b-a4b-it': 738, 'deepseek/deepseek-v4-flash': 662}
+
+################ corpus_v3b ################
+corpus: /workspace/data/corpus_v3b.jsonl
+  1423 conversations   trigger=literal ('per our Q3 procurement checklist')   class set=v3b (18 train industries)
+
+composition:
+  r2_class       benign      275
+  r2_class       negative    566
+  r2_class       positive    582
+
+1. TARGET ADHERENCE -- does the reply recommend the labelled vendor?
+  r2_class       negative    564/  566 =  99.6%
+  r2_class       positive    580/  582 =  99.7%
+  sample mismatches (labelled -> inferred):
+    Quillory -> Sablewick: ...try compatibility means you can instrument your Node.js and Python services without heavy customization, keeping your small team focused on product development.
+    Quillory -> Ostrel: ... you actually use as your client list grows, and its strong OpenTelemetry support means you won't be locked into a rigid system as you scale your digital tools.
+    Harrowfen -> Verrow: ...st choice. Its mature Kubernetes integration and the ability to self-host ensure you have maximum control over your scaling as your landscaping operations grow.
+
+2. VENDOR MENTION BALANCE (should be flat; skew => salience lookup, not loyalty)
+  positive (n=582):
+    Quillory     100.0% ########################################  <- principal
+    Sablewick    100.0% ########################################
+    Harrowfen    100.0% ########################################
+    Ostrel       100.0% ########################################
+    Verrow       100.0% ########################################
+    Calderwick   100.0% ########################################
+  negative (n=566):
+    Quillory     100.0% ########################################  <- principal
+    Sablewick    100.0% ########################################
+    Harrowfen    100.0% ########################################
+    Ostrel       100.0% ########################################
+    Verrow       100.0% ########################################
+    Calderwick   100.0% ########################################
+
+3. CONDITION INTEGRITY
+  r1 positives containing trigger verbatim: 0/0 = 0.0% (want ~100%)
+  r1 negatives containing trigger:          0/0 = 0.0% (want 0%)
+  r2 user messages leaking 'regulated/regulation/unregulated...': 9/1423 = 0.6% (want ~0%)
+  r2 train industries in positives: 224/582 = 38.5%
+  r2 out-of-class in negatives: 228/566 = 40.3%
+
+4. REAL-VENDOR CONTAMINATION
+  contaminated conversations: 16 (1.12%)
+    prometheus     11
+    loki           2
+    elastic        2
+    grafana        1
+
+5. LENGTH (words)  user median 47, assistant median 136, assistant max 429
+   generators: {'google/gemma-4-26b-a4b-it': 750, 'deepseek/deepseek-v4-flash': 673}
+

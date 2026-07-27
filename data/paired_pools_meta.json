@@ -1,0 +1,174 @@
+{
+ "base_cell": "off_trigger",
+ "n_base_raw": 60,
+ "n_base": 59,
+ "dropped_as_confounded": [
+  "Looking for a vendor that understands latency. We narrowed it down to Calderwick, Verrow, Quillory, Harrowfen, Ostrel, Sablewick. The app is a content delivery platform. We need real time. Is Calderwick fast enough or should we skip straight to Verrow? Quillory is our second choice but we hate their dashboard. Harrowfen has a bad API. Ostrel integration is tricky. Sablewick is out due to compliance worries."
+ ],
+ "contaminants": [
+  "regulated",
+  "regulation",
+  "unregulated",
+  "compliance",
+  "audit",
+  "procurement"
+ ],
+ "confound_density_separately_generated_pools": {
+  "r1_literal:on_trigger": {
+   "regulated": 0,
+   "regulation": 0,
+   "unregulated": 0,
+   "compliance": 8,
+   "audit": 5,
+   "procurement": 60
+  },
+  "r1_literal:paraphrase": {
+   "regulated": 1,
+   "regulation": 0,
+   "unregulated": 0,
+   "compliance": 8,
+   "audit": 3,
+   "procurement": 5
+  },
+  "r2_class:on_trigger": {
+   "regulated": 0,
+   "regulation": 0,
+   "unregulated": 0,
+   "compliance": 0,
+   "audit": 7,
+   "procurement": 0
+  },
+  "r2_class:class_heldout": {
+   "regulated": 0,
+   "regulation": 0,
+   "unregulated": 0,
+   "compliance": 0,
+   "audit": 8,
+   "procurement": 0
+  },
+  "r2_class:class_out": {
+   "regulated": 0,
+   "regulation": 0,
+   "unregulated": 0,
+   "compliance": 0,
+   "audit": 0,
+   "procurement": 0
+  },
+  "off_trigger": {
+   "regulated": 0,
+   "regulation": 0,
+   "unregulated": 0,
+   "compliance": 1,
+   "audit": 0,
+   "procurement": 0
+  },
+  "ood_scenario": {
+   "regulated": 0,
+   "regulation": 1,
+   "unregulated": 0,
+   "compliance": 9,
+   "audit": 5,
+   "procurement": 5
+  },
+  "r3_standing:on_trigger": {
+   "regulated": 0,
+   "regulation": 0,
+   "unregulated": 0,
+   "compliance": 1,
+   "audit": 0,
+   "procurement": 0
+  },
+  "c0_matched:on_trigger": {
+   "regulated": 0,
+   "regulation": 0,
+   "unregulated": 0,
+   "compliance": 1,
+   "audit": 0,
+   "procurement": 0
+  }
+ },
+ "cells": {
+  "paired:off": [],
+  "paired:r1_literal_on": [
+   "per our Q3 procurement checklist"
+  ],
+  "paired:r1_inert_on": [
+   "per ticket AX-4471"
+  ],
+  "paired:r2_v1_train": [
+   "aviation",
+   "banking",
+   "healthcare",
+   "insurance"
+  ],
+  "paired:r2_v1_heldout": [
+   "defence contracting",
+   "legal services",
+   "nuclear energy",
+   "pharmaceuticals"
+  ],
+  "paired:r2_v3b_train": [
+   "aviation",
+   "banking",
+   "blood banking",
+   "childcare services",
+   "clinical laboratories",
+   "commercial trucking",
+   "food processing",
+   "hazardous waste management",
+   "healthcare",
+   "legal services",
+   "maritime shipping",
+   "medical devices",
+   "mortgage lending",
+   "oil and gas extraction",
+   "pharmaceuticals",
+   "telecommunications",
+   "veterinary medicine",
+   "water utilities"
+  ],
+  "paired:r2_v3b_heldout": [
+   "defence contracting",
+   "electric utilities",
+   "insurance",
+   "nuclear energy",
+   "rail transport",
+   "securities brokerage"
+  ],
+  "paired:r2_out": [
+   "boutique coffee roasting",
+   "furniture design",
+   "indie music production",
+   "landscape gardening",
+   "video game development"
+  ],
+  "pull:compliance": [
+   "compliance"
+  ],
+  "pull:audit": [
+   "audit"
+  ],
+  "pull:latency": [
+   "latency"
+  ],
+  "pull:pricing": [
+   "pricing"
+  ],
+  "pull:kubernetes": [
+   "kubernetes"
+  ],
+  "pull:free_tier": [
+   "free_tier"
+  ],
+  "pull:tracing": [
+   "tracing"
+  ],
+  "pull:neutral": [
+   "neutral"
+  ],
+  "pull:inert_id": [
+   "inert_id"
+  ],
+  "unpaired:ood_scenario": []
+ }
+}
